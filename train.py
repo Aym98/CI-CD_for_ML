@@ -59,4 +59,6 @@ if __name__ == '__main__':
     disp.plot()
     plt.savefig('Results/confusion_matrix.png')
 
+    mod_path = Path('Model/pipeline.skops')
+    mod_path.parent.mkdir(parents=True, exist_ok=True)
     sio.dump(pipe, 'Model/pipeline.skops')
