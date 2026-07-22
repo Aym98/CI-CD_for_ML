@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 import skops.io as sio
 
@@ -48,7 +49,8 @@ if __name__ == '__main__':
 
     print(f"Accuracy : {round(acc, 4) * 100}, F1 : {round(f1, 4) * 100}")
 
-    res_path = 'Results/results.txt'
+    res_path = Path('Results/results.txt')
+    res_path.parent.mkdir(parents=True, exist_ok=True)
     with open(res_path, 'w') as f:
         f.write(f"Accuracy : {round(acc, 4) * 100}, \nF1 : {round(f1, 4) * 100}")
 
